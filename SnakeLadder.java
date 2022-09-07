@@ -21,9 +21,11 @@ public class SnakeLadder {
 	public static void main( String[] args )
 	{
 		Player P1= new Player();
+		int total = 0;
 		while(P1.current_position != 100) {
 			int result = P1.rollADie();	
 			int check = P1.checkOption();
+			total++;
 			switch (check) {
 			case 0:
 				break;
@@ -38,14 +40,13 @@ public class SnakeLadder {
 					P1.current_position=0;
 				break;				
 			}
-			System.out.println(result);
-			System.out.println(check);
-			System.out.println(P1.current_position);
+			System.out.println("Dice outcome  "+ result);
+		
+			System.out.println("Player current position is  "+P1.current_position);
 			
 		
 		}
+		System.out.println("Number of times the dice was played to win  "+ total);
 		
 	}
 }
-
-
